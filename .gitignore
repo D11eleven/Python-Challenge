@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+#Important for MAC users to use DS_Store (case sensitive) 
+DS_Store
+
 __pycache__/
 *.py[cod]
 *$py.class
