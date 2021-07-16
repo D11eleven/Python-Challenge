@@ -1,5 +1,6 @@
-# Testing Git Push 
+# Setup PyBank and PyPoll Folders
 
-Checking Git Push 
 HW#3 - Py Me Up, Charlie
-Create Repository to hold HW#3 Python Homework - Py Me Up, Charlie
+Create PyBank and PyPoll folders
+Each folder includes 2 subfolders - Resources and Analysis
+Each folder includes 1 script file 'main.py'
