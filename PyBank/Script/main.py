@@ -9,7 +9,7 @@ csvpath = os.path.join("..","Resources","budget_data.csv")
 
 with open (csvpath) as csvfile:
      csvreader = csv.reader(csvfile, delimiter=',')
-
+# add encode and new line?
      print(csvreader)
 
      csv_header = next(csvreader)
@@ -17,6 +17,15 @@ with open (csvpath) as csvfile:
 
      for row in csvreader:
          print(row)
+
+
+#Total_Months
+#Total
+#Average_Change
+#MAX_Increase_PNL
+#MIN_Increase_PNL 
+# months
+# pnl         
 
 
 # Total Number of Months Included in the DataSet
@@ -34,7 +43,8 @@ with open (csvpath) as csvfile:
 # Calculate the Changes in "PnL" over the Entire Period, 
 # then Find the Average of those Changes
 # ** Take Difference of Row I+1 and I and store as separate value for each row I; 
-# ** then add those values and divide by number of entries
+# ** then add those values and divide by number of entries  ???
+#  need clarification 
 
 
 
@@ -42,15 +52,38 @@ with open (csvpath) as csvfile:
 
 
 # The Greatest Increase in Profits (Date and Amount) over the Entire Period
-# **Find MAX in PnL and match its date
+# **Find MAX in PnL changes and match its date
 
 
 # The Greatest Decrease in Profits (Date and Amount) over the Entire Period
-# **Find MAX in PnL and match its date
+# **Find MIN in PnL changes and match its date
 
 
 
-# Output to Txt File
+# Print Results 
+
+#print ("    Financial Analysis")
+#print ("-------------------------------")
+#print ("Total_Months: xxxx")
+#print ("Total: xxxxxxxxxx")
+#print ("Average Change: $ xxxxxxxxxxxx")
+#print ("Greatest Increase in Profits: (xxxxxxxx))
+#print ("Greatest Decrease in Profits: (xxxxxxxxxx))
+
+
+
+
+
+
+# Output Results to TXT FILE 
+
+#output ("    Financial Analysis")
+#prvvvvnt ("-------------------------------")
+#prvvvint ("Total_Months: xxxx")
+#pvvvrint ("Total: xxxxxxxxxx")
+#prvvvint ("Average Change: $ xxxxxxxxxxxx")
+#prvvvint ("Greatest Increase in Profits: (xxxxxxxx))
+#pvvvvrnt ("Greatest Decrease in Profits: (xxxxxxxxxx))
 
 
 

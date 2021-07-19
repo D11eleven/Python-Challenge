@@ -5,7 +5,6 @@ import csv
 
 csvpath = os.path.join("..","Resources","election_data.csv")
 
-# # '..', 'Resources',
 
 with open(csvpath) as csvfile:
      csvreader = csv.reader(csvfile, delimiter=',')
@@ -50,27 +49,33 @@ with open(csvpath) as csvfile:
 
 
 
-# Output to Txt File
+# Print Results
+
+# print("   Election Results")
+# print("----------------")
+# print("Total Votes: ()")
+# print("----------------"
+# print("candidate1: "  " (percentage candidate1) "   " (votes candidate1))
+# print("candidate2: "  " (percentage candidate2) "   " (votes candidate2))
+# print("candidate3: "  " (percentage candidate3) "   " (votes candidate3))
+# print("candidate4: "  " (percentage candidate4) "   " (votes candidate4))
+# print("----------------"
+# print("Winner:()")
+# print("----------------") 
 
 
 
 
+# Results to TXT FILE
 
-
-
-
-
-
-
-
-
-
-
-
-# TXT File Format
-# Financial Analysis
-# Total Months: 86
-# Total: $38382578
-# Average Change: $-2315.12
-# Greatest Increase in Profits: Feb-2012 ($1926159)
-# Greatest Decrease in Profits: Sep-2013 ($-2196167)
+# output("  Election Results")
+# output ("----------------"
+# output("Total Votes: ()")
+# output ("----------------"
+# output("candidate1: "  " (percentage candidate1) "   " (votes candidate1))
+# output("candidate2: "  " (percentage candidate1) "   " (votes candidate1))
+# output("candidate3: "  " (percentage candidate1) "   " (votes candidate1))
+# output("candidate4: "  " (percentage candidate1) "   " (votes candidate1))
+# output ("----------------"
+# output("Winner:()")
+# output ("----------------")

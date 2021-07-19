@@ -2,4 +2,4 @@
 
 HW#3 - Py Me Up, Charlie
 
-Organized code with section comments for each task . Tidywork 
+Create Print and Output sections in both projects. More work on logic and possible variables to be used. 
