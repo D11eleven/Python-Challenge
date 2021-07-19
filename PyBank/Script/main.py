@@ -7,12 +7,12 @@ import csv
 csvpath = os.path.join("..","Resources","budget_data.csv")
 # # '..', 'Resources',
 
-with open (csvpath) as csvfile:
+with open (csvpath, newline='', encoding='utf-8') as csvfile:
      csvreader = csv.reader(csvfile, delimiter=',')
-# add encode and new line?
+# add encode and new line 2-12
      print(csvreader)
 
-#read header row first 2-8
+#read header row first 2-8,3-1
      csv_header = next(csvreader)
      print(f"CSV Header: {csv_header}")
 #read each row of data after header 2-8
@@ -20,25 +20,39 @@ with open (csvpath) as csvfile:
          print(row)
 
 
-#Total_Months
-#Total
+Total_Months = 0
+PnL_Total = 0 
+
 #Average_Change
+# val1 -val2  = change
+PnL_Value1 = 0
+Total_PnL_Change = 0
+
 #MAX_Increase_PNL
 #MIN_Increase_PNL 
-# months
-# pnl         
+Date[]
+PnL[]
+PnL_Change[]  
 
+# extract and save data from each row into seperate lists 
+#  Date[] & Profit/Losses (PnL[])  2-12 udemy     
 
 # Total Number of Months Included in the DataSet
 # **  need beginning date and ending date; count, find difference(inclusive)
-
+# number of rows - header (next does this) = number of months 
+# for row in csvreader
+#Total_Months = Total_Months + 1
+# initiate Total_Months = 0
+# create list of months ; use len for number of entries >>>>  number of months 
+Date.append(row[0])
+Total_Months =len(Date)
+#Put months in list 
 
 
 # Net Total Amount of "Profit/Losses"("PnL") over Entire Period
 # **Sum PnL column
-
-
-
+PnL.append(row[1])
+PnL_Total = PnL_Total + ???????? (row[1])
 
 
 # Calculate the Changes in "PnL" over the Entire Period, 
@@ -46,18 +60,21 @@ with open (csvpath) as csvfile:
 # ** Take Difference of Row I+1 and I and store as separate value for each row I; 
 # ** then add those values and divide by number of entries  ???
 #  need clarification 
-
-
-
-
+PnL_Value2 = int(row[1])
+PnL_Change = PnL_Value2 - PnL_Value1
+#Average_Change = ()
 
 
 # The Greatest Increase in Profits (Date and Amount) over the Entire Period
 # **Find MAX in PnL changes and match its date
 
+MAX_Increase_PNL = max(PnL_Change)
+
 
 # The Greatest Decrease in Profits (Date and Amount) over the Entire Period
 # **Find MIN in PnL changes and match its date
+
+MIN_Increase_PNL = min(PnL_Change)
 
 
 
@@ -65,19 +82,35 @@ with open (csvpath) as csvfile:
 
 #print ("    Financial Analysis")
 #print ("-------------------------------")
-#print ("Total_Months: xxxx")
-#print ("Total: xxxxxxxxxx")
-#print ("Average Change: $ xxxxxxxxxxxx")
-#print ("Greatest Increase in Profits: (xxxxxxxx))
-#print ("Greatest Decrease in Profits: (xxxxxxxxxx))
+print ("Total_Months: Total_Months")
+print ("Total: PnL_Total")
+print ("Average Change: $ xxxxxxxxxxxx")
+print ("Greatest Increase in Profits: (xxxxxxxx))
+print ("Greatest Decrease in Profits: (xxxxxxxxxx))
 
 
 
 # Output Results to TXT FILE 
 
-#output_path = os.path.join("..", "Resources", "Analysis.txt")
-#with open(output_path, "w", newline='') as csvfile
+#output_path = os.path.join("..", "Output", "Analysis.txt")
+#with open(output_path, "w", newline='') as txtfile
+
+
+
+#NO!
+# Initialize csv.writer
+   # csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+    # Write the second row
+   # csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
 #from 2-10
+
+
+
+
 
 #output ("    Financial Analysis")
 #prvvvvnt ("-------------------------------")
