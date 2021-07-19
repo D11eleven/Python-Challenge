@@ -18,34 +18,23 @@ with open(csvpath) as csvfile:
          print(row)
 
 
-# Total Number of Months Included in the DataSet
-# **  need beginning date and ending date; count, find difference(inclusive)
+#* The total number of votes cast
+
+ # * A complete list of candidates who received votes
+
+  #* The percentage of votes each candidate won
+
+  #* The total number of votes each candidate won
+
+  #* The winner of the election based on popular vote.
+
+#from Taylor Stack
+#def percent(x):
+ #   num = x/total_votes
+  #  percentage = "{:.2%}".format(num)
+   # return(percentage)
 
 
-
-# Net Total Amount of "Profit/Losses"("PnL") over Entire Period
-# **Sum PnL column
-
-
-
-
-
-# Calculate the Changes in "PnL" over the Entire Period, 
-# then Find the Average of those Changes
-# ** Take Difference of Row I+1 and I and store as separate value for each row I; 
-# ** then add those values and divide by number of entries
-
-
-
-
-
-
-# The Greatest Increase in Profits (Date and Amount) over the Entire Period
-# **Find MAX in PnL and match its date
-
-
-# The Greatest Decrease in Profits (Date and Amount) over the Entire Period
-# **Find MAX in PnL and match its date
 
 
 

@@ -1,5 +1,5 @@
 #Module
-
+# ref 2-8,2-9
 import os
 import csv
 
@@ -12,9 +12,10 @@ with open (csvpath) as csvfile:
 # add encode and new line?
      print(csvreader)
 
+#read header row first 2-8
      csv_header = next(csvreader)
      print(f"CSV Header: {csv_header}")
-
+#read each row of data after header 2-8
      for row in csvreader:
          print(row)
 
@@ -72,10 +73,11 @@ with open (csvpath) as csvfile:
 
 
 
-
-
-
 # Output Results to TXT FILE 
+
+#output_path = os.path.join("..", "Resources", "Analysis.txt")
+#with open(output_path, "w", newline='') as csvfile
+#from 2-10
 
 #output ("    Financial Analysis")
 #prvvvvnt ("-------------------------------")
