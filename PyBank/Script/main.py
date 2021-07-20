@@ -3,12 +3,9 @@
 import os
 import csv
 
+csvpath = os.path.join( "..","Resources","budget_data.csv")
 
-csvpath = os.path.join("..","Resources","budget_data.csv")
-# # '..', 'Resources',
-
-
-
+#Variables 
 Total_Months = 0
 PnL_Total = 0 
 
@@ -30,7 +27,7 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 
 #read header row first 2-8,3-1
      csv_header = next(csvreader)
-     print(f"CSV Header: {csv_header}")
+     #print(f"CSV Header: {csv_header}")
 #read each row of data after header 2-8
      for row in csvreader:
          #print(row)
@@ -55,9 +52,9 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 # Total Number of Months Included in the DataSet
 # **  need beginning date and ending date; count, find difference(inclusive)
 # number of rows - header (next does this) = number of months 
-# for row in csvreader
+#one method to count months
 #Total_Months = Total_Months + 1
-# initiate Total_Months = 0
+
 # create list of months ; use len for number of entries >>>>  number of months 
           date.append(row[0])
           Total_Months =len(date)
@@ -73,8 +70,7 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 # Calculate the Changes in "PnL" over the Entire Period, 
 # then Find the Average of those Changes
 # ** Take Difference of Row I+1 and I and store as separate value for each row I; 
-# ** then add those values and divide by number of entries  ???
-#  need clarification 
+# ** then add those values and divide by number of entries   
           PnL_Value2 = int(row[1])
           change = PnL_Value2 - PnL_Value1
           PnL_Change.append(change)
@@ -88,12 +84,14 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 # **Find MAX in PnL changes and match its date
 
           MAX_Increase_PNL = max(PnL_Change)
+          MAX_Increase_Date = date[PnL_Change.index(MAX_Increase_PNL)]
 
 
 # The Greatest Decrease in Profits (Date and Amount) over the Entire Period
 # **Find MIN in PnL changes and match its date
 
           MIN_Increase_PNL = min(PnL_Change)
+          MIN_Increase_Date = date[PnL_Change.index(MIN_Increase_PNL)]
 
 
 
@@ -102,47 +100,32 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 print (f"    Financial Analysis")
 print (f"-------------------------------")
 print (f"Total_Months: {Total_Months}")
-print (f"Total: {PnL_Total}")
-print (f"Average Change: {Average_Change}")
-print (f"Greatest Increase in Profits: {MAX_Increase_PNL}")
-print (f"Greatest Decrease in Profits: {MIN_Increase_PNL}")
+print (f"Total:  ${PnL_Total}")
+print (f"Average Change:  ${Average_Change}")
+print (f"Greatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
+print (f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 
 
 
 # Output Results to TXT FILE 
 
-#output_path = os.path.join("..", "Output", "Analysis.txt")
-#with open(output_path, "w", newline='') as txtfile
-
-
-#output ("    Financial Analysis")
-#prvvvvnt ("-------------------------------")
-#prvvvint ("Total_Months: xxxx")
-#pvvvrint ("Total: xxxxxxxxxx")
-#prvvvint ("Average Change: $ xxxxxxxxxxxx")
-#prvvvint ("Greatest Increase in Profits: (xxxxxxxx))
-#pvvvvrnt ("Greatest Decrease in Profits: (xxxxxxxxxx))
+output = open("Analysis.txt", "w")
 
 
 
-#NO!
-# Initialize csv.writer
-   # csvwriter = csv.writer(csvfile, delimiter=',')
+output_path = os.path.join( "..", "Analysis", "Analysis.txt")
+with open(output_path, "w") as txtfile:
 
-    # Write the first row (column headers)
-    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
-
-    # Write the second row
-   # csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
-#from 2-10
+ #    txtfile.write(Analysis)
 
 
-
-
-
-
-
-
+     txtfile.write (f"\n    Financial Analysis")
+     txtfile.write (f"\n-------------------------------")
+     txtfile.write (f"\nTotal_Months: {Total_Months}")
+     txtfile.write (f"\nTotal:  ${PnL_Total}")
+     txtfile.write (f"\nAverage Change:  ${Average_Change}")
+     txtfile.write (f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
+     txtfile.write (f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 
 
 
