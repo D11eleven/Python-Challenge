@@ -3,7 +3,7 @@
 import os
 import csv
 
-csvpath = os.path.join( "..","Resources","budget_data.csv")
+csvpath = os.path.join("..","Resources","budget_data.csv")
 
 #Variables 
 Total_Months = 0
@@ -62,10 +62,23 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 # ** then add those values and divide by number of entries   
           PnL_Value2 = int(row[1])
           change = PnL_Value2 - PnL_Value1
+
+          #Total_PnL_Change = T
           PnL_Change.append(change)
+
+          #def Average(value):
+               #return sum(PnL_Change) / len(PnL_Change)
 
           Total_PnL_Change = Total_PnL_Change + change
           Average_Change = (Total_PnL_Change / Total_Months)
+
+          #Troubleshooting
+          #Average_Change = sum(PnL_Change)/ Total_Months
+          #Average_Change = Average(PnL_Change)
+          #Average_Change = sum(PnL_Change)/len(PnL_Change)
+          #Average_Change = (Total_PnL_Change / 1)
+          #Average_Change = 86/Total_Months
+          
           PnL_Value1 = PnL_Value2
 
 
