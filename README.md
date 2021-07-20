@@ -2,4 +2,5 @@
 
 HW#3 - Py Me Up, Charlie
 
-Working Logic on PyPoll, Organizing Sections 
+Housecleaning on PyBank; Formatting Print output
+Working Logic on PyPoll, Organizing Sections

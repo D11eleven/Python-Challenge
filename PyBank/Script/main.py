@@ -17,7 +17,6 @@ Total_PnL_Change = 0
 #MAX_Increase_PNL
 #MIN_Increase_PNL 
 date = []
-PnL = []
 PnL_Change = []  
 
 with open (csvpath, newline='', encoding='utf-8') as csvfile:
@@ -31,15 +30,6 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 #read each row of data after header 2-8
      for row in csvreader:
          #print(row)
-
-
-#with open(budget_csvpath) as budget_csvfile:
-    #reads each row in the csv as a list
- #   csvreader = csv.reader(budget_csvfile)
-    #skip the header
-  #  header = next(csvreader)
-
-
 
 # extract and save data from each row into seperate lists 
 #  Date[] & Profit/Losses (PnL[])  2-12 udemy     
@@ -61,9 +51,8 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 #Put months in list 
 
 
-# Net Total Amount of "Profit/Losses"("PnL") over Entire Period
+# Net Total Amount of "Profit/Losses" over Entire Period
 # **Sum PnL column
-          PnL.append(row[1])
           PnL_Total = PnL_Total + int(row[1])
 
 
@@ -101,7 +90,7 @@ print (f"    Financial Analysis")
 print (f"-------------------------------")
 print (f"Total_Months: {Total_Months}")
 print (f"Total:  ${PnL_Total}")
-print (f"Average Change:  ${Average_Change}")
+print (f"Average Change:  ${round(Average_Change)}")
 print (f"Greatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
 print (f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 
@@ -109,14 +98,8 @@ print (f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})
 
 # Output Results to TXT FILE 
 
-output = open("Analysis.txt", "w")
-
-
-
 output_path = os.path.join( "..", "Analysis", "Analysis.txt")
 with open(output_path, "w") as txtfile:
-
- #    txtfile.write(Analysis)
 
 
      txtfile.write (f"\n    Financial Analysis")
