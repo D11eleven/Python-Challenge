@@ -9,11 +9,9 @@ csvpath = os.path.join("..","Resources","election_data.csv")
 
 Total_Votes = 0
 
-
 Candidate_List = []
 
 with open(csvpath, newline='', encoding='utf-8') as csvfile:
-
 
   csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -23,18 +21,48 @@ with open(csvpath, newline='', encoding='utf-8') as csvfile:
      #print(f"CSV Header: {csv_header}")
 
   for row in csvreader:
-         #print(row)
-         
-         
+         #print(row)print(f"    Election Results")
+
+
+      Total_Votes = Total_Votes + 1
+
+
+print(f"-------------------------------")
+print(f"Total_Votes: {Total_Votes}")
+print(f"-------------------------------")
+# print("candidate1: "  " (percentage candidate1) "   " (votes candidate1))
+# print("candidate2: "  " (percentage candidate2) "   " (votes candidate2))
+# print("candidate3: "  " (percentage candidate3) "   " (votes candidate3))
+# print("candidate4: "  " (percentage candidate4) "   " (votes candidate4))
+# print(f"-------------------------------")
+# print("Winner:()")
+# print(f"-------------------------------")
+
+# Output Results to TXT FILE 
+
+output_path = os.path.join( "..", "Analysis", "Analysis.txt")
+with open(output_path, "w") as txtfile:
+
+#  #    txtfile.write(Analysis)
+
+  txtfile.write(f"\n    Financial Analysis")
+  txtfile.write(f"\n-------------------------------")
+  txtfile.write(f"\nTotal_Votes: {Total_Votes}")
+  txtfile.write(f"\n-------------------------------")
+#       txtfile.write (f"\nTotal:  ${PnL_Total}")
+#       txtfile.write (f"\nAverage Change:  ${Average_Change}")
+#       txtfile.write (f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
+#       txtfile.write (f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
+  txtfile.write(f"\n-------------------------------") 
+#       txtfile.wrint( )
+  txtfile.write(f"\n-------------------------------")
 
 
 #* The total number of votes cast
-# Sum column 1 (index 0)
-    Total_Votes += Total_Votes + int(row[0]
-      
 
+#Total_Votes = Total_Votes + 1
 
- # * A complete list of candidates who received votes
+# * A complete list of candidates who received votes
  #Run through loop to append candidate name that is not in Candidate_List
  # Candidate_List[]
  # vote  county  candidate
@@ -76,36 +104,3 @@ with open(csvpath, newline='', encoding='utf-8') as csvfile:
   #  percentage = "{:.2%}".format(num)
    # return(percentage)
 
-
-# Print Results
-print (f"    Election Results")
-print (f"-------------------------------")
-print (f"Total_Votes: {Total_Votes}")
-print (f"-------------------------------")
-# print("candidate1: "  " (percentage candidate1) "   " (votes candidate1))
-# print("candidate2: "  " (percentage candidate2) "   " (votes candidate2))
-# print("candidate3: "  " (percentage candidate3) "   " (votes candidate3))
-# print("candidate4: "  " (percentage candidate4) "   " (votes candidate4))
-# print (f"-------------------------------")
-# print("Winner:()")
-# print (f"-------------------------------")
-
-# Output Results to TXT FILE 
-
-#output_path = os.path.join( "..", "Analysis", "Analysis.txt")
-#with open(output_path, "w") as txtfile:
-
-#  #    txtfile.write(Analysis)
-
-
-txtfile.write (f"\n    Financial Analysis")
-txtfile.write (f"\n-------------------------------")
-txtfile.write (f"\nTotal_Votes: {Total_Votes}")
-txtfile.write (f"\n-------------------------------")
-#       txtfile.write (f"\nTotal:  ${PnL_Total}")
-#       txtfile.write (f"\nAverage Change:  ${Average_Change}")
-#       txtfile.write (f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
-#       txtfile.write (f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
-txtfile.write (f"\n-------------------------------") 
-#       txtfile.wrint( )
-txtfile.write (f"\n-------------------------------")

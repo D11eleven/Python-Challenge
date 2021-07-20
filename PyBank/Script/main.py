@@ -25,7 +25,7 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
     # print(csvreader)
 
 #read header row first 2-8,3-1
-#similar to vba assignment to assign value since no change for first entry
+#similar to vba assignment to assign value since no change for first entry (tutor)
      csv_header = next(csvreader)
      first_row = next(csvreader)
      PnL_Value1 = int(first_row[1])
@@ -71,7 +71,7 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
           PnL_Change.append(change)
 
           #def Average(value):
-               #return sum(PnL_Change) / len(PnL_Change)
+               #return sum(PnL_Change) / len(PnL_Change)  tutor
 
           Total_PnL_Change = Total_PnL_Change + change
           Average_Change = (Total_PnL_Change / (len(PnL_Change)))
@@ -81,7 +81,7 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 
 
 # The Greatest Increase in Profits (Date and Amount) over the Entire Period
-# **Find MAX in PnL changes and match its date
+# **Find MAX in PnL changes and match its date   askpython.com
 
           MAX_Increase_PNL = max(PnL_Change)
           MAX_Increase_Date = date[PnL_Change.index(MAX_Increase_PNL)]
@@ -97,13 +97,13 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
 
 # Print Results 
 
-print (f"    Financial Analysis")
-print (f"-------------------------------")
-print (f"Total_Months: {Total_Months}")
-print (f"Total:  ${PnL_Total}")
-print (f"Average Change:  ${round(Average_Change)}")
-print (f"Greatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
-print (f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
+print(f"    Financial Analysis")
+print(f"-------------------------------")
+print(f"Total_Months: {Total_Months}")
+print(f"Total:  ${PnL_Total}")
+print(f"Average Change:  ${round(Average_Change)}")
+print(f"Greatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
+print(f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 
 
 
@@ -114,13 +114,13 @@ output_path = os.path.join( "..", "Analysis", "Analysis.txt")
 with open(output_path, "w") as txtfile:
 
 
-     txtfile.write (f"\n    Financial Analysis")
-     txtfile.write (f"\n-------------------------------")
-     txtfile.write (f"\nTotal_Months: {Total_Months}")
-     txtfile.write (f"\nTotal:  ${PnL_Total}")
-     txtfile.write (f"\nAverage Change:  ${round(Average_Change)}")
-     txtfile.write (f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
-     txtfile.write (f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
+     txtfile.write(f"\n    Financial Analysis")
+     txtfile.write(f"\n-------------------------------")
+     txtfile.write(f"\nTotal_Months: {Total_Months}")
+     txtfile.write(f"\nTotal:  ${PnL_Total}")
+     txtfile.write(f"\nAverage Change:  ${round(Average_Change)}")
+     txtfile.write(f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
+     txtfile.write(f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 
 
 
