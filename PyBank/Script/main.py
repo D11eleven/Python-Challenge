@@ -25,8 +25,12 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
     # print(csvreader)
 
 #read header row first 2-8,3-1
+#similar to vba assignment to assign value since no change for first entry
      csv_header = next(csvreader)
-     #print(f"CSV Header: {csv_header}")
+     first_row = next(csvreader)
+     PnL_Value1 = int(first_row[1])
+     date.append(first_row[0])
+     
 #read each row of data after header 2-8
      for row in csvreader:
          #print(row)
@@ -70,15 +74,9 @@ with open (csvpath, newline='', encoding='utf-8') as csvfile:
                #return sum(PnL_Change) / len(PnL_Change)
 
           Total_PnL_Change = Total_PnL_Change + change
-          Average_Change = (Total_PnL_Change / Total_Months)
+          Average_Change = (Total_PnL_Change / (len(PnL_Change)))
 
-          #Troubleshooting
-          #Average_Change = sum(PnL_Change)/ Total_Months
-          #Average_Change = Average(PnL_Change)
-          #Average_Change = sum(PnL_Change)/len(PnL_Change)
-          #Average_Change = (Total_PnL_Change / 1)
-          #Average_Change = 86/Total_Months
-          
+                    
           PnL_Value1 = PnL_Value2
 
 
@@ -109,6 +107,7 @@ print (f"Greatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})
 
 
 
+
 # Output Results to TXT FILE 
 
 output_path = os.path.join( "..", "Analysis", "Analysis.txt")
@@ -119,7 +118,7 @@ with open(output_path, "w") as txtfile:
      txtfile.write (f"\n-------------------------------")
      txtfile.write (f"\nTotal_Months: {Total_Months}")
      txtfile.write (f"\nTotal:  ${PnL_Total}")
-     txtfile.write (f"\nAverage Change:  ${Average_Change}")
+     txtfile.write (f"\nAverage Change:  ${round(Average_Change)}")
      txtfile.write (f"\nGreatest Increase in Profits: {MAX_Increase_Date} (${MAX_Increase_PNL})")
      txtfile.write (f"\nGreatest Decrease in Profits: {MIN_Increase_Date} (${MIN_Increase_PNL})")
 

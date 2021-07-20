@@ -2,5 +2,7 @@
 
 HW#3 - Py Me Up, Charlie
 
-logic checks on PyPoll
-Pushing Repo for  Tutor session
+Code changes after tutor session
+average_change corrected --- similar to vba assignment 
+where first calculation of change is made before loop
+*change is not 0 to first value 
