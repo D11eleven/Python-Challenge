@@ -58,6 +58,11 @@ with open(output_path, "w") as txtfile:
   txtfile.write(f"\n-------------------------------")
 
 
+
+
+
+# DISREGARD FOLLOWING  NOTES TO SELF, UNUSED CODE
+
 #* The total number of votes cast
 
 #Total_Votes = Total_Votes + 1

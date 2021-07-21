@@ -2,5 +2,6 @@
 
 HW#3 - Py Me Up, Charlie
 
-Final Run on PyBank - Works 
-Test Run on PyPoll - Good  - More to Do 
+HW3 Submitted 
+PyBanK Completed
+PyPoll Incomplete - Working 
